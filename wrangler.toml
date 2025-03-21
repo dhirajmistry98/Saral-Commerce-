@@ -1,0 +1,13 @@
+# Your wrangler.toml file should look something like this:
+name = "saral-commerce"
+compatibility_date = "2024-03-21"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".next/output/static"
+
+
+
+[[d1_databases]]
+binding = "DB"
+database_name = "saral-commerce"
+database_id = "ce1cb119-2a15-4ac2-8eec-b2774c0ba3b3"
+
