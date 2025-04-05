@@ -28,14 +28,14 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (!response.ok) {
-        setError(data.error || 'Invalid credentials');
+        setError(data.error ?? 'Invalid credentials');
         setIsLoading(false);
         return;
       }
 
       // Success - navigate to dashboard
       router.push('/dashboard');
-    } catch (error) {
+    } catch (err) {
       setError('An error occurred. Please try again.');
       setIsLoading(false);
     }
@@ -81,7 +81,7 @@ export default function LoginPage() {
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                 required
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value ?? '')}
               />
             </div>
             
@@ -105,7 +105,7 @@ export default function LoginPage() {
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                 required
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value ?? '')}
               />
             </div>
             
