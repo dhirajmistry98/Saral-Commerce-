@@ -28,14 +28,14 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (!response.ok) {
-        setError(data.error ?? 'Invalid credentials');
+        setError(data.error || 'Invalid credentials');
         setIsLoading(false);
         return;
       }
 
       // Success - navigate to dashboard
       router.push('/dashboard');
-    } catch (err) {
+    } catch (error) {
       setError('An error occurred. Please try again.');
       setIsLoading(false);
     }
@@ -49,7 +49,7 @@ export default function LoginPage() {
           <h1 className="text-4xl font-bold mb-6">Welcome Back</h1>
           <p className="text-lg mb-6">Log in to your account to access Saral Ecommerce.</p>
           <div className="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
-            <p className="italic text-sm">"Empowering Retailers & Brands – Simplify, Sell, Succeed!!"</p>
+            <p className="italic text-sm">Empowering Retailers & Brands – Simplify, Sell, Succeed!!</p>
           </div>
         </div>
       </div>
@@ -78,10 +78,10 @@ export default function LoginPage() {
                 type="email"
                 name="email"
                 placeholder="you@example.com"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                className="w-full text-gray-900 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                 required
                 value={email}
-                onChange={(e) => setEmail(e.target.value ?? '')}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             
@@ -102,10 +102,10 @@ export default function LoginPage() {
                 type="password"
                 name="password"
                 placeholder="••••••••"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                className="w-full px-4 text-gray-900 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                 required
                 value={password}
-                onChange={(e) => setPassword(e.target.value ?? '')}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             
@@ -142,7 +142,7 @@ export default function LoginPage() {
           
           <div className="mt-8 text-center">
             <p className="text-gray-600">
-              Don't have an account?{' '}
+              Dont have an account?{' '}
               <Link href="/signup" className="text-blue-600 hover:text-blue-800 hover:underline font-medium">
                 Sign up
               </Link>

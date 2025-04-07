@@ -22,6 +22,7 @@
     "@fullcalendar/react": "^6.1.15",
     "@fullcalendar/timegrid": "^6.1.15",
     "@planetscale/database": "^1.19.0",
+    "@sendgrid/mail": "^8.1.4",
     "@tailwindcss/postcss": "^4.0.14",
     "@tanstack/react-query": "^5.62.10",
     "buffer": "^6.0.3",
