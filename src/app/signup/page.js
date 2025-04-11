@@ -54,11 +54,6 @@ export default function SignupPage() {
         setLoading(false);
         return;
       }
-
-      // Store user email for the dashboard
-      localStorage.setItem('userEmail', email);
-      localStorage.setItem('userType', accountType);
-      localStorage.setItem('username', username);
       
       // Success message and redirect
       alert('Registration successful! Redirecting to login...');

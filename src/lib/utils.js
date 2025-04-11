@@ -1,3 +1,4 @@
+
 export function handleErrorResponse(message, status = 500) {
   return new Response(
     JSON.stringify({ error: message }),
